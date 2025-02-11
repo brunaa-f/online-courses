@@ -16,7 +16,7 @@ import { Observable } from 'rxjs';
 export class CourseListComponent implements OnInit {
   title = "Grade de Cursos";
   isAuthenticated: boolean = true;
-  filters = { category: '', search: '' };
+  filters: { category: string; search: string; order: 'asc' | 'desc' } = { category: '', search: '', order: 'asc' };
   filteredCourses$: Observable<Course[]> = new Observable<Course[]>(); 
 
   constructor(private courseService: CourseService) { }
@@ -27,5 +27,10 @@ export class CourseListComponent implements OnInit {
 
   updateFilters() {
     this.courseService.setFilters(this.filters);
+  }
+
+  updateSortingOrder(order: 'asc' | 'desc') {
+    this.filters.order = order;
+    this.courseService.setSortingOrder(order);
   }
 }

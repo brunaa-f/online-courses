@@ -10,6 +10,10 @@
     <option value="Design">Design</option>
     <option value="Marketing">Marketing</option>
   </select>
+  <select [(ngModel)]="filters.order" (change)="updateSortingOrder(filters.order)">
+    <option value="asc">Duração: Ascendente</option>
+    <option value="desc">Duração: Descendente</option>
+  </select>
 </div>
 
 <div *ngIf="filteredCourses$ | async as filteredCourses;">
