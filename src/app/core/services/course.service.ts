@@ -79,4 +79,8 @@ export class CourseService {
       })
     );
   }
+
+  getCourseById(id: number ): Course | undefined {
+    return this.coursesSubject.getValue().find(course => course.id === id);
+  }
 }

@@ -1,0 +1,15 @@
+<div *ngIf="course">
+    <h1>{{ course?.name }}</h1>
+    <img [src]="course?.image" alt="{{ course?.name }}">
+    <p>{{ course?.description }}</p>
+    <span>{{ course?.category }} - {{ course?.duration }}h</span>
+
+    <h2>Aulas:</h2>
+    <ol>
+      <li *ngFor="let lesson of course.lessons">
+        <strong>{{ lesson.title }}</strong>
+      </li>
+    </ol>
+
+    <button (click)="goBack()">Voltar</button>
+</div>

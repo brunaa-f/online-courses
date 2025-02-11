@@ -16,15 +16,8 @@
   </select>
 </div>
 
-<div *ngIf="filteredCourses$ | async as filteredCourses;">
-  <div *ngFor="let course of filteredCourses">
-    <div class="course-card">
-      <img [src]="course.image" alt="{{ course.name }}">
-      <h3>{{ course.name }}</h3>
-      <p>{{ course.description }}</p>
-      <span>{{ course.category }} - {{ course.duration }}h</span>
-    </div>
-  </div>
+<div *ngIf="filteredCourses$ | async as filteredCourses">
+  <app-course-card *ngFor="let course of filteredCourses" [course]="course"></app-course-card>
 </div>
 
 <ng-template #loginTemplate>

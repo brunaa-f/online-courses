@@ -1,0 +1,6 @@
+<div class="course-card" (click)="navigateToDetail()">
+    <img [src]="course.image" alt="{{ course.name }}">
+    <h3>{{ course.name }}</h3>
+    <p>{{ course.description }}</p>
+    <span>{{ course.category }} - {{ course.duration }}h</span>
+</div>

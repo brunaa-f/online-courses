@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { CourseService } from '../../core/services/course.service';
 import { Course } from '../../core/models/course.model';
 import { Observable } from 'rxjs';
+import { CourseCardComponent } from "../course-card/course-card.component";
 
 @Component({
   standalone: true,
   selector: 'app-course-list',
-  imports: [RouterModule, CommonModule, FormsModule],
+  imports: [RouterModule, CommonModule, FormsModule, CourseCardComponent],
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss']
 })
