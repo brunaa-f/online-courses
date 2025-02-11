@@ -1,8 +1,29 @@
 <div *ngIf="isAuthenticated; else loginTemplate">
-    <h1>{{title}}</h1>
+  <h1>{{title}}</h1>
+</div>
+
+<div>
+  <input type="text" [(ngModel)]="filters.search" (input)="updateFilters()" placeholder="Pesquisar curso..." />
+  <select [(ngModel)]="filters.category" (change)="updateFilters()">
+    <option value="">Todas as categorias</option>
+    <option value="Programação">Programação</option>
+    <option value="Design">Design</option>
+    <option value="Marketing">Marketing</option>
+  </select>
+</div>
+
+<div *ngIf="filteredCourses$ | async as filteredCourses;">
+  <div *ngFor="let course of filteredCourses">
+    <div class="course-card">
+      <img [src]="course.image" alt="{{ course.name }}">
+      <h3>{{ course.name }}</h3>
+      <p>{{ course.description }}</p>
+      <span>{{ course.category }} - {{ course.duration }}h</span>
+    </div>
+  </div>
 </div>
 
 <ng-template #loginTemplate>
-    <h2>Você precisa estar logado para acessar essa página.</h2>
-    <!-- <button (click)="redirectToLogin()">Ir para Login</button> -->
+  <h2>Você precisa estar logado para acessar essa página.</h2>
+  <!-- <button (click)="redirectToLogin()">Ir para Login</button> -->
 </ng-template>
