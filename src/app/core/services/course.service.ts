@@ -30,7 +30,7 @@ export class CourseService {
         description: 'Aprenda React',
         category: 'Programação',
         duration: 40,
-        image: 'assets/b.webp',
+        image: 'assets/react.webp',
         lessons: [
           { id: 1, title: 'Introdução ao react', description: 'Primeiros passos', duration: 30 },
           { id: 2, title: 'Redux', description: 'Entendendo a estrutura básica', duration: 45 }
@@ -38,11 +38,35 @@ export class CourseService {
       },
       {
         id: 2,
-        name: 'Curso de Angular',
+        name: 'Angular',
         description: 'Aprenda Angular do básico ao avançado.',
         category: 'Programação',
-        duration: 30,
-        image: 'assets/a.webp',
+        duration: 10,
+        image: 'assets/angular.webp',
+        lessons: [
+          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
+          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+        ]
+      },
+      {
+        id: 3,
+        name: 'UI/UX design',
+        description: 'tutorial',
+        category: 'Design',
+        duration: 20,
+        image: 'assets/design.png',
+        lessons: [
+          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
+          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+        ]
+      },
+      {
+        id: 4,
+        name: 'Marketing',
+        description: 'tutorial',
+        category: 'Marketing',
+        duration: 10,
+        image: 'assets/marketing.png',
         lessons: [
           { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
           { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }

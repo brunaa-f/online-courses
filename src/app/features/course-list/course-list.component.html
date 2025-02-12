@@ -1,26 +1,62 @@
 <app-header></app-header>
 
-<div *ngIf="isAuthenticated; else loginTemplate">
+<div class="text-center p-8 bg-[#0e1013] mb-4" *ngIf="isAuthenticated; else loginTemplate">
   <h1>{{title}}</h1>
 </div>
 
-<div>
-  <input type="text" [(ngModel)]="filters.search" (input)="updateFilters()" placeholder="Pesquisar curso..." />
-  <select [(ngModel)]="filters.category" (change)="updateFilters()">
-    <option value="">Todas as categorias</option>
-    <option value="Programação">Programação</option>
-    <option value="Design">Design</option>
-    <option value="Marketing">Marketing</option>
-  </select>
-  <select [(ngModel)]="filters.order" (change)="updateSortingOrder(filters.order)">
-    <option value="asc">Duração: Ascendente</option>
-    <option value="desc">Duração: Descendente</option>
-  </select>
-</div>
+<section class="container mx-auto py-4 space-y-4">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+    <input 
+      type="text" 
+      [(ngModel)]="filters.search" 
+      (input)="updateFilters()" 
+      placeholder="Pesquisar curso..." 
+      class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800 bg-white w-full sm:w-80"
+    />
+    <select 
+      [(ngModel)]="filters.category" 
+      (change)="updateFilters()" 
+      class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800 bg-white w-full sm:w-56"
+    >
+      <option value="">Todas as categorias</option>
+      <option value="Programação">Programação</option>
+      <option value="Design">Design</option>
+      <option value="Marketing">Marketing</option>
+    </select>
+    <div class="flex items-center gap-4">
+      <!-- Botão Ascendente -->
+      <button 
+        (click)="updateSortingOrder('asc')" 
+        class="p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-800">
+        <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L11 5.414V14a1 1 0 01-2 0V5.414L7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3z" clip-rule="evenodd" />
+      </svg>
+      </button>
+      <button 
+        (click)="updateSortingOrder('desc')" 
+        class="p-2 bg-gray-100 rounded-lg shadow-sm hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-gray-800">
+          <path fill-rule="evenodd" d="M10 17a1 1 0 01-.707-.293l-3-3a1 1 0 011.414-1.414L9 14.586V7a1 1 0 112 0v7.586l2.293-2.293a1 1 0 111.414 1.414l-3 3A1 1 0 0110 17z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+    <!-- <select 
+      [(ngModel)]="filters.order" 
+      (change)="updateSortingOrder(filters.order)" 
+      class="p-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-800 bg-white w-full sm:w-56"
+    >
+      <option value="asc">Duração: Ascendente</option>
+      <option value="desc">Duração: Descendente</option>
+    </select> -->
+  </div>
+</section>
 
-<div *ngIf="filteredCourses$ | async as filteredCourses">
+
+<section class="container" *ngIf="filteredCourses$ | async as filteredCourses">
   <app-course-card *ngFor="let course of filteredCourses" [course]="course"></app-course-card>
-</div>
+</section>
 
 <ng-template #loginTemplate>
   <h2>Você precisa estar logado para acessar essa página.</h2>
