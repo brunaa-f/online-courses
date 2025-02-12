@@ -53,7 +53,7 @@ export class CourseService {
         name: 'UI/UX design',
         description: 'tutorial',
         category: 'Design',
-        duration: 20,
+        duration: 30,
         image: 'assets/design.png',
         lessons: [
           { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
@@ -65,11 +65,58 @@ export class CourseService {
         name: 'Marketing',
         description: 'tutorial',
         category: 'Marketing',
-        duration: 10,
+        duration: 20,
         image: 'assets/marketing.png',
         lessons: [
           { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
           { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+        ]
+      },
+      {
+        id: 4,
+        name: 'Marketing',
+        description: 'tutorial',
+        category: 'Marketing',
+        duration: 20,
+        image: 'assets/marketing.png',
+        lessons: [
+          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
+          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+        ]
+      },
+      {
+        id: 4,
+        name: 'Marketing',
+        description: 'tutorial',
+        category: 'Marketing',
+        duration: 20,
+        image: 'assets/marketing.png',
+        lessons: [
+          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
+          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+        ]
+      },
+      {
+        id: 4,
+        name: 'Marketing',
+        description: 'tutorial',
+        category: 'Marketing',
+        duration: 20,
+        image: 'assets/marketing.png',
+        lessons: [
+          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
+          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+        ]
+      },
+      {
+        id: 4,
+        name: 'Linux',
+        description: 'tutorial',
+        category: 'Programação',
+        duration: 20,
+        image: 'assets/linux.jpg',
+        lessons: [
+          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
         ]
       },
     ];
