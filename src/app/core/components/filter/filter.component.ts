@@ -1,0 +1,27 @@
+import { Component, EventEmitter, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+@Component({
+  selector: 'app-filter',
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './filter.component.html',
+  styleUrl: './filter.component.scss'
+})
+export class FilterComponent {
+  category: string = '';
+  sortingOrder: 'asc' | 'desc' | 'initial' = 'initial';
+
+  @Output() categoryChange = new EventEmitter<string>();
+  @Output() sortingChange = new EventEmitter<'asc' | 'desc'>();
+
+  onCategoryChange() {
+    this.categoryChange.emit(this.category);
+  }
+
+  toggleSortingOrder() {
+    this.sortingOrder = this.sortingOrder === 'asc' ? 'desc' : 'asc';
+    this.sortingChange.emit(this.sortingOrder);
+  }
+
+}

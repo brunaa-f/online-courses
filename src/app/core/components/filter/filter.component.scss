@@ -1,0 +1,15 @@
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding-right: 2.5rem;
+    background-image: none;
+}
+
+.custom-select::-ms-expand {
+    display: none;
+}
+
+.custom-select+span {
+    pointer-events: none;
+}

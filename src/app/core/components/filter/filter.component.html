@@ -1,0 +1,31 @@
+<div class="flex items-center gap-4">
+    <div class="relative w-full">
+        <select [(ngModel)]="category" (change)="onCategoryChange()"
+            class="w-full p-2 pl-4 pr-10 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 bg-[var(--bg-color)] border border-dark-gray border-xl custom-select">
+            <option value="">Todas as categorias</option>
+            <option value="Programação">Programação</option>
+            <option value="Design">Design</option>
+            <option value="Marketing">Marketing</option>
+        </select>
+        <span class="absolute right-2 top-1/2 transform -translate-y-1/2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </span>
+    </div>
+
+    <button (click)="toggleSortingOrder()"
+        class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 flex items-center">
+        Duração
+        <span *ngIf="sortingOrder === 'initial'" class="w-5 h-5 ml-2">
+            <img src="../../../assets/swap.svg" alt="">
+        </span>
+        <span *ngIf="sortingOrder === 'asc'" class="w-5 h-5 ml-2">
+            <img src="../../../assets/arrow-up.svg" alt="">
+        </span>
+        <span *ngIf="sortingOrder === 'desc'" class="w-5 h-5 ml-2 flex items-center">
+            <img src="../../../assets/arrow-down.svg" alt="">
+        </span>
+    </button>
+</div>

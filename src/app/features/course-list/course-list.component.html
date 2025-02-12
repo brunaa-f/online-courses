@@ -4,29 +4,12 @@
   <h1>{{title}}</h1>
 </div>
 
-<div class="container mx-auto flex flex-col lg:flex-row gap-6 px-4 xl:px-0">
-  <section class="w-full lg:w-1/3 space-y-4 lg:sticky lg:top-4 self-start h-fit rounded-lg shadow-md">
-    <div class="relative w-full">
-      <input type="text" [(ngModel)]="filters.search" (input)="updateFilters()" placeholder="Pesquisar curso..."
-        class="w-full p-2 pl-10  rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 bg-gray-800 bg-[var(--bg-color)]  border-b border-dark-gray border-xl" />
-      <i class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-    </div>
-    <select [(ngModel)]="filters.category" (change)="updateFilters()"
-      class="w-full sm:w-auto p-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-[var(--bg-color)] border-b border-dark-gray border-xl">
-      <option value="">Todas as categorias</option>
-      <option value="Programação">Programação</option>
-      <option value="Design">Design</option>
-      <option value="Marketing">Marketing</option>
-    </select>
-    <div class="flex items-center gap-4">
-      <button (click)="updateSortingOrder('asc')"
-        class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        Crescente
-      </button>
-      <button (click)="updateSortingOrder('desc')"
-        class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-        Decrescente
-      </button>
+<div class="container mx-auto flex flex-col lg:flex-row gap-6 px-4 xl:px-0 ">
+  <section class="w-full lg:w-1/3 space-y-4 lg:sticky lg:top-4 self-start h-fit rounded-lg shadow-md ">
+    <div class="flex flex-col gap-4">
+      <app-search (searchChange)="updateSearch($event)"></app-search>
+      <app-filter (categoryChange)="updateCategory($event)" (sortingChange)="updateSortingOrder($event)">
+      </app-filter>
     </div>
   </section>
 
