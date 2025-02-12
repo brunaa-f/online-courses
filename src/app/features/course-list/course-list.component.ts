@@ -9,11 +9,12 @@ import { CourseCardComponent } from "../course-card/course-card.component";
 import { HeaderComponent } from '../../core/components/header/header.component';
 import { SearchComponent } from "../../core/components/search/search.component";
 import { FilterComponent } from "../../core/components/filter/filter.component";
+import { FooterComponent } from "../../core/components/footer/footer.component";
 
 @Component({
   standalone: true,
   selector: 'app-course-list',
-  imports: [RouterModule, CommonModule, FormsModule, CourseCardComponent, HeaderComponent, SearchComponent, FilterComponent],
+  imports: [RouterModule, CommonModule, FormsModule, CourseCardComponent, HeaderComponent, SearchComponent, FilterComponent, FooterComponent],
   templateUrl: './course-list.component.html',
   styleUrls: ['./course-list.component.scss']
 })
