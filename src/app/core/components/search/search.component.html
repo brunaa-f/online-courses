@@ -1,6 +1,6 @@
-<div class="relative w-full">
-  <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()"
-    placeholder="Pesquisar curso..."
-    class="w-full p-2 pl-10 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 bg-[var(--bg-color)] border border-dark-gray border-xl" />
-  <i class="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+<div class="relative w-full text-4">
+  <input type="text" [(ngModel)]="searchTerm" (input)="onSearch()" placeholder="Pesquisar curso..." class="w-full p-2 pr-10 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 
+         bg-[var(--bg-color)] text-gray-300 border border-dark-gray border-xl 
+         placeholder-gray-300" />
+  <i class="fa fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-300"></i>
 </div>
