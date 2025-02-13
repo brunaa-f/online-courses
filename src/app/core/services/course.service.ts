@@ -27,13 +27,13 @@ export class CourseService {
       {
         id: 1,
         name: 'React',
-        description: 'Aprenda React',
+        description: 'Neste curso você irá aprender a como utilizar o React do zero para o desenvolvimento de aplicações web reativas. Você irá aprender a criar um aplicativo web.',
         category: 'Programação',
         duration: 40,
         image: 'assets/react.webp',
         lessons: [
-          { id: 1, title: 'Introdução ao react', description: 'Primeiros passos', duration: 30 },
-          { id: 2, title: 'Redux', description: 'Entendendo a estrutura básica', duration: 45 }
+          { id: 1, title: 'Introdução', description: 'Primeiros passos', duration: 30, videoUrl: 'https://www.youtube.com/embed/j942wKiXFu8?si=GTcp_z6XV-XgbMyW'},
+          { id: 2, title: 'Componentes e templates', description: 'Entendendo a estrutura básica', duration: 45, videoUrl: 'https://www.youtube.com/embed/9D1x7-2FmTA?si=tA-mYFPIeMzyc8qK' }
         ]
       },
       {
@@ -44,8 +44,7 @@ export class CourseService {
         duration: 10,
         image: 'assets/angular.webp',
         lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
-          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+
         ]
       },
       {
@@ -56,8 +55,7 @@ export class CourseService {
         duration: 30,
         image: 'assets/design.png',
         lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
-          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
+
         ]
       },
       {
@@ -68,55 +66,6 @@ export class CourseService {
         duration: 20,
         image: 'assets/marketing.png',
         lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
-          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
-        ]
-      },
-      {
-        id: 4,
-        name: 'Marketing',
-        description: 'tutorial',
-        category: 'Marketing',
-        duration: 20,
-        image: 'assets/marketing.png',
-        lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
-          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
-        ]
-      },
-      {
-        id: 4,
-        name: 'Marketing',
-        description: 'tutorial',
-        category: 'Marketing',
-        duration: 20,
-        image: 'assets/marketing.png',
-        lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
-          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
-        ]
-      },
-      {
-        id: 4,
-        name: 'Marketing',
-        description: 'tutorial',
-        category: 'Marketing',
-        duration: 20,
-        image: 'assets/marketing.png',
-        lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
-          { id: 2, title: 'Componentes e Diretivas', description: 'Entendendo a estrutura básica do Angular', duration: 45 }
-        ]
-      },
-      {
-        id: 4,
-        name: 'Linux',
-        description: 'tutorial',
-        category: 'Programação',
-        duration: 20,
-        image: 'assets/linux.jpg',
-        lessons: [
-          { id: 1, title: 'Introdução ao angular', description: 'Primeiros passos com Angular', duration: 30 },
         ]
       },
     ];

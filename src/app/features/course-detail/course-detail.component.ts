@@ -1,23 +1,28 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Course } from '../../core/models/course.model';
 import { CourseService } from '../../core/services/course.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course-detail',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './course-detail.component.html',
-  styleUrl: './course-detail.component.scss'
+  styleUrls: ['./course-detail.component.scss']
 })
-export class CourseDetailComponent {
-  course!: Course | undefined; 
+export class CourseDetailComponent implements OnInit {
+  course?: Course;
+  sidebarOpen = false;
+  selectedLessonIndex: number = 0; 
+  selectedLesson?: { title: string; videoUrl: string };
+  safeVideoUrl?: SafeResourceUrl; 
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private courseService: CourseService
+    private courseService: CourseService,
+    private sanitizer: DomSanitizer
   ) {}
 
   ngOnInit(): void {
@@ -28,11 +33,34 @@ export class CourseDetailComponent {
       
       if (!this.course) {
         console.error(`Curso com ID ${courseId} não encontrado.`);
+        return;
+      }
+
+      if (this.course.lessons?.length) {
+        this.selectLesson(this.course.lessons[0], 0);
       }
     }
   }
 
-  goBack(): void {
-    this.router.navigate(['/courses']);
+  toggleSidebar(): void {
+    this.sidebarOpen = !this.sidebarOpen;
+  }
+
+  selectLesson(lesson: { title: string; videoUrl: string }, index: number): void {
+    this.selectedLesson = lesson;
+    this.selectedLessonIndex = index;
+    this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(lesson.videoUrl);
+  }
+
+  prevLesson(): void {
+    if (this.selectedLessonIndex > 0) {
+      this.selectLesson(this.course!.lessons[this.selectedLessonIndex - 1], this.selectedLessonIndex - 1);
+    }
+  }
+
+  nextLesson(): void {
+    if (this.selectedLessonIndex < this.course!.lessons.length - 1) {
+      this.selectLesson(this.course!.lessons[this.selectedLessonIndex + 1], this.selectedLessonIndex + 1);
+    }
   }
 }
