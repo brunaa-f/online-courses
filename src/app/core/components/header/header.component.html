@@ -1,15 +1,28 @@
-<header class="bg-black text-white relative z-10 px-5 border-b border-dark-gray border-xl text-3">
+<header class="bg-black text-white relative z-10 px-5 border-b border-dark-gray border-xl text-4 sm:text-3">
   <div class="mx-auto h-[70px] flex justify-between items-center">
-    <div class="text-xl font-semibold">
-      <img src="../../../../assets/logo.png" alt="Logo" class="h-8">
+    <div>
+      <img src="../../../../assets/logo.png" alt="Logo" class="h-[28px] sm:h-[32px]">
     </div>
-    <nav class="flex space-x-4">
+
+    <button (click)="toggleMenu()" class="sm:hidden text-white focus:outline-none hover:text-indigo-400">
+      <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+    <div [ngClass]="{ 'hidden': !menuOpen, 'flex': menuOpen }" 
+    class="absolute top-14 right-4 bg-black text-white flex-col px-4 sm:px-0 py-2 sm:py-0 rounded-md shadow-lg 
+           min-w-[200px] sm:min-w-0 sm:static sm:flex sm:flex-row sm:space-x-4 sm:bg-transparent sm:shadow-none">
       <a routerLink="/courses" routerLinkActive="text-indigo-400" [routerLinkActiveOptions]="{ exact: true }"
-        class="hover:text-indigo-400">
+        class="hover:text-indigo-400 block sm:inline py-2 border-b border-gray-800 sm:border-none">
         Cursos
       </a>
-      <a routerLink="/home" routerLinkActive="text-indigo-400" class="hover:text-indigo-400">Home</a>
-      <a routerLink="/login" routerLinkActive="text-indigo-400" class="hover:text-indigo-400">Conta/Login</a>
-    </nav>
+      <a routerLink="/home" routerLinkActive="text-indigo-400"
+        class="hover:text-indigo-400 block sm:inline py-2 border-b border-gray-800 sm:border-none">
+        Home
+      </a>
+      <a routerLink="/login" routerLinkActive="text-indigo-400" class="hover:text-indigo-400 block sm:inline py-2">
+        Conta/Login
+      </a>
+    </div>
   </div>
 </header>
