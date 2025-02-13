@@ -25,49 +25,77 @@ export class CourseService {
   private loadCourses() {
     const courses: Course[] = [
       {
-        id: 1,
-        name: 'React',
-        description: 'Neste curso você irá aprender a como utilizar o React do zero para o desenvolvimento de aplicações web reativas. Você irá aprender a criar um aplicativo web.',
-        category: 'Programação',
-        duration: 40,
-        image: 'assets/react.webp',
-        lessons: [
-          { id: 1, title: 'Introdução', description: 'Primeiros passos', duration: 30, videoUrl: 'https://www.youtube.com/embed/j942wKiXFu8?si=GTcp_z6XV-XgbMyW'},
-          { id: 2, title: 'Componentes e templates', description: 'Entendendo a estrutura básica', duration: 45, videoUrl: 'https://www.youtube.com/embed/9D1x7-2FmTA?si=tA-mYFPIeMzyc8qK' }
+        "id": 1,
+        "name": "React",
+        "description": "Domine o React do zero ao avançado e aprenda a construir aplicações web dinâmicas e reativas. Neste curso, você desenvolverá um projeto real, explorando conceitos como componentes, estado, hooks e integração com APIs.",
+        "category": "Programação",
+        "duration": 40,
+        "image": "assets/react.webp",
+        "lessons": [
+          { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
         ]
       },
       {
-        id: 2,
-        name: 'Angular',
-        description: 'Aprenda Angular do básico ao avançado.',
-        category: 'Programação',
-        duration: 10,
-        image: 'assets/angular.webp',
-        lessons: [
-
+        "id": 2,
+        "name": "Angular",
+        "description": "Aprenda Angular do básico ao avançado e crie aplicações robustas com este poderoso framework. Explore módulos, diretivas, serviços e o sistema de injeção de dependências.",
+        "category": "Programação",
+        "duration": 35,
+        "image": "assets/angular.webp",
+        "lessons": [
+          { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
         ]
       },
       {
-        id: 3,
-        name: 'UI/UX design',
-        description: 'tutorial',
-        category: 'Design',
-        duration: 30,
-        image: 'assets/design.png',
-        lessons: [
-
+        "id": 3,
+        "name": "UI/UX Design",
+        "description": "Descubra os princípios essenciais do design de interfaces e experiência do usuário. Aprenda a criar layouts intuitivos, acessíveis e visualmente atraentes.",
+        "category": "Design",
+        "duration": 30,
+        "image": "assets/design.png",
+        "lessons": [
+          { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
         ]
       },
       {
-        id: 4,
-        name: 'Marketing',
-        description: 'tutorial',
-        category: 'Marketing',
-        duration: 20,
-        image: 'assets/marketing.png',
-        lessons: [
+        "id": 4,
+        "name": "Marketing Digital",
+        "description": "Domine as estratégias essenciais do marketing digital, incluindo SEO, redes sociais, branding e campanhas de anúncios pagas.",
+        "category": "Marketing",
+        "duration": 20,
+        "image": "assets/marketing.png",
+        "lessons": [
+          { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
         ]
       },
+      {
+        "id": 5,
+        "name": "Python para Iniciantes",
+        "description": "Aprenda os fundamentos da programação com Python. Explore variáveis, estruturas de controle, funções e manipulação de dados.",
+        "category": "Programação",
+        "duration": 25,
+        "image": "assets/py.png",
+        "lessons": [
+          { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Java Spring Boot",
+        "description": "Construa APIs REST poderosas com Java e Spring Boot. Aprenda sobre MVC, bancos de dados e autenticação.",
+        "category": "Programação",
+        "duration": 45,
+        "image": "assets/java.png",
+        "lessons": [
+          { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
+        ]
+      }
     ];
     this.coursesSubject.next(courses);
   }

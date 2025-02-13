@@ -1,14 +1,12 @@
-<div
-  class="bg-custom-dark p-4 border border-gray-700 rounded-lg flex items-center justify-between space-x-4 mb-3 cursor-pointer 
+<div class="bg-custom-dark p-4 border border-gray-700 rounded-lg flex items-center justify-between space-x-4 mb-3 cursor-pointer 
          transition-all duration-300 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/30"
-  (click)="navigateToDetail()"
->
+  (click)="navigateToDetail()">
   <div class="flex-1">
-    <h3 class="text-2 mb-2">{{ course.name }}</h3>
+    <h3 class="sm:text-2 text-3 mb-2">{{ course.name }}</h3>
     <div class="flex gap-4 text-4 text-gray-300 ">
       <span>{{ course.lessons.length }} Aulas</span>
       <span>{{ course.duration }} Horas</span>
     </div>
   </div>
-  <img [src]="course.image" alt="{{ course.name }}" class="w-20 h-20 object-cover rounded-lg">
+  <img [src]="course.image" alt="{{ course.name }}" class="w-16 h-16 sm:w-20 sm:h-20 object-cover rounded-lg">
 </div>
