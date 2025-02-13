@@ -4,11 +4,11 @@
   (click)="navigateToDetail()"
 >
   <div class="flex-1">
-    <h3 class="text-2">{{ course.name }}</h3>
-    <div class="flex gap-4 text-3">
+    <h3 class="text-2 mb-2">{{ course.name }}</h3>
+    <div class="flex gap-4 text-4 text-gray-300 ">
       <span>{{ course.lessons.length }} Aulas</span>
       <span>{{ course.duration }} Horas</span>
     </div>
   </div>
-  <img [src]="course.image" alt="{{ course.name }}" class="w-24 h-24 object-cover rounded-lg">
+  <img [src]="course.image" alt="{{ course.name }}" class="w-20 h-20 object-cover rounded-lg">
 </div>
