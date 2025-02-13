@@ -21,7 +21,12 @@ export class FilterComponent {
   }
 
   toggleSortingOrder() {
-    this.sortingOrder = this.sortingOrder === 'asc' ? 'desc' : 'asc';
+    if (this.sortingOrder === 'initial') {
+      this.sortingOrder = 'desc';
+    } else {
+      this.sortingOrder = this.sortingOrder === 'asc' ? 'desc' : 'asc';
+    }
+    
     this.sortingChange.emit(this.sortingOrder);
   }
 
