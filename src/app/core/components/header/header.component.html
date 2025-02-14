@@ -1,8 +1,8 @@
 <header class="bg-black text-white relative z-10 px-5 border-b border-dark-gray border-xl text-3 sm:text-3">
   <div class="mx-auto h-[70px] flex justify-between items-center">
-    <div>
-      <img src="../../../../assets/logo.png" alt="Logo" class="h-[28px] sm:h-[32px]">
-    </div>
+    <a routerLink="/home">
+      <img src="../../../../assets/logo.png" alt="Logo" class="h-[28px] sm:h-[32px] cursor-pointer">
+    </a>
 
     <button (click)="toggleMenu()" class="sm:hidden text-white focus:outline-none hover:text-indigo-400">
       <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">

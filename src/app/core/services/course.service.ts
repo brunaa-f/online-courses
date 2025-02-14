@@ -95,6 +95,54 @@ export class CourseService {
           { "id": 1, "title": "Introdução", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
           { "id": 2, "title": "Componentes e Templates", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
         ]
+      },
+      {
+        "id": 7,
+        "name": "UX",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus",
+        "category": "Design",
+        "duration": 50,
+        "image": "assets/ux.png",
+        "lessons": [
+          { "id": 1, "title": "lorem 1", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Lorem 2", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Random",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus",
+        "category": "Design",
+        "duration": 50,
+        "image": "assets/random.png",
+        "lessons": [
+          { "id": 1, "title": "lorem 1", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Lorem 2", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Random",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus",
+        "category": "Design",
+        "duration": 50,
+        "image": "assets/random.png",
+        "lessons": [
+          { "id": 1, "title": "lorem 1", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Lorem 2", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Random",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus",
+        "category": "Programação",
+        "duration": 50,
+        "image": "assets/random.png",
+        "lessons": [
+          { "id": 1, "title": "lorem 1", "duration": 30, "videoUrl": "https://www.youtube.com/embed/j942wKiXFu8" },
+          { "id": 2, "title": "Lorem 2", "duration": 45, "videoUrl": "https://www.youtube.com/embed/2MDP0RjEfFs?si=K1hl63wwMVlGvepP" }
+        ]
       }
     ];
     this.coursesSubject.next(courses);
