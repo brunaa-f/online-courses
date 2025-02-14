@@ -4,6 +4,7 @@ import { Course } from '../../core/models/course.model';
 import { CourseService } from '../../core/services/course.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course-detail',
@@ -22,7 +23,8 @@ export class CourseDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private courseService: CourseService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +37,8 @@ export class CourseDetailComponent implements OnInit {
         console.error(`Curso com ID ${courseId} não encontrado.`);
         return;
       }
+
+      this.titleService.setTitle(`${this.course.name} Curso online`);
 
       if (this.course.lessons?.length) {
         this.selectLesson(this.course.lessons[0], 0);

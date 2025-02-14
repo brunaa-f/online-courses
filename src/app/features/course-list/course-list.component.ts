@@ -10,6 +10,7 @@ import { HeaderComponent } from '../../core/components/header/header.component';
 import { SearchComponent } from "../../core/components/search/search.component";
 import { FilterComponent } from "../../core/components/filter/filter.component";
 import { FooterComponent } from "../../core/components/footer/footer.component";
+import { Title } from '@angular/platform-browser';
 
 @Component({
   standalone: true,
@@ -31,10 +32,13 @@ export class CourseListComponent implements OnInit {
   filteredCourses$: Observable<Course[]> = new Observable<Course[]>();
   sortingOrder: 'asc' | 'desc' | 'initial' = 'initial';
 
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService,
+              private titleService: Title
+  ) { }
 
   ngOnInit() {
     this.filteredCourses$ = this.courseService.getFilteredCourses();
+    this.titleService.setTitle('Grade de cursos');
   }
 
   updateFilters() {
