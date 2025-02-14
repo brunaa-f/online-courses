@@ -1,17 +1,30 @@
-<div *ngIf="course" class="flex h-screen">
+<div *ngIf="course; else noCourseTemplate" class="flex h-screen">
 
   <div [ngClass]="{'-translate-x-full': !sidebarOpen, 'translate-x-0': sidebarOpen}"
     class="fixed left-0 top-0 bottom-0 w-64 bg-black text-white p-4 transform transition-transform duration-300 z-50 shadow-lg">
-    <h2 class="text-2 mb-5">{{ course.name }}</h2>
+
+    <!-- Container flex para alinhar imagem e título -->
+    <div class="flex items-center space-x-3 mb-5">
+      <img *ngIf="course.image" [src]="course.image" alt="{{ course.name }}"
+        class="w-10 h-10 object-cover rounded-full border border-gray-600">
+      <div class="flex flex-col">
+        <h2 class="text-xl font-bold">{{ course.name }}</h2>
+        <p class="text-xs text-gray-400">{{ course.category }} |  {{ course.duration }} Horas</p>
+      </div>
+    </div>
+    
+    
+
     <ul class="space-y-2">
       <li *ngFor="let lesson of course.lessons; let i = index" (click)="selectLesson(lesson, i)" [ngClass]="{
-        'border-2 border-gray-500 border-xs' : i === selectedLessonIndex,
-        'border border-transparent hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/30': i !== selectedLessonIndex
-      }" class="p-3 rounded cursor-pointer transition-all duration-300">
+                'border-2 border-gray-500' : i === selectedLessonIndex,
+                'border border-transparent hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/30': i !== selectedLessonIndex
+            }" class="p-3 rounded cursor-pointer transition-all duration-300">
         {{ lesson.title }}
       </li>
     </ul>
   </div>
+
 
   <div class="fixed sm:top-1/2 sm:translate-y-1/2 transition-transform duration-300 top-[70px] translate-y-0"
     [ngClass]="{'translate-x-64': sidebarOpen, 'translate-x-0': !sidebarOpen}">
@@ -33,11 +46,13 @@
       </div>
 
       <div class="flex justify-between w-full mt-3">
-        <button (click)="prevLesson()" [disabled]="selectedLessonIndex === 0" class="px-4 py-2 bg-indigo-600 text-gray-300 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed">
+        <button (click)="prevLesson()" [disabled]="selectedLessonIndex === 0"
+          class="px-4 py-2 bg-indigo-600 text-gray-300 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed">
           <i class="fas fa-chevron-left mr-2"></i> Anterior
         </button>
-      
-        <button (click)="nextLesson()" [disabled]="selectedLessonIndex === course.lessons.length - 1" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed">
+
+        <button (click)="nextLesson()" [disabled]="selectedLessonIndex === course.lessons.length - 1"
+          class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-1 focus:ring-indigo-500 flex items-center disabled:opacity-50 disabled:cursor-not-allowed">
           Próxima <i class="fas fa-chevron-right ml-2"></i>
         </button>
       </div>
@@ -48,3 +63,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #noCourseTemplate>
+  <div class="flex h-screen justify-center items-center">
+    <p class="text-3 sm:text-2 font-bold text-gray-500">O curso não foi encontrado. Por favor, selecione outro curso.</p>
+  </div>
+</ng-template>

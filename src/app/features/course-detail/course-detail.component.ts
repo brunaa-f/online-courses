@@ -38,7 +38,7 @@ export class CourseDetailComponent implements OnInit {
         return;
       }
 
-      this.titleService.setTitle(`${this.course.name} Curso online`);
+      this.titleService.setTitle(`${this.course.name} - Curso Online`);
 
       if (this.course.lessons?.length) {
         this.selectLesson(this.course.lessons[0], 0);

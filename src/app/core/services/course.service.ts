@@ -74,7 +74,7 @@ export class CourseService {
       },
       {
         "id": 5,
-        "name": "Python para Iniciantes",
+        "name": "Python",
         "description": "Aprenda os fundamentos da programação com Python. Explore variáveis, estruturas de controle, funções e manipulação de dados.",
         "category": "Programação",
         "duration": 25,
@@ -86,7 +86,7 @@ export class CourseService {
       },
       {
         "id": 6,
-        "name": "Java Spring Boot",
+        "name": "Java",
         "description": "Construa APIs REST poderosas com Java e Spring Boot. Aprenda sobre MVC, bancos de dados e autenticação.",
         "category": "Programação",
         "duration": 45,
@@ -136,7 +136,7 @@ export class CourseService {
         "id": 10,
         "name": "Random",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ligula eu lectus",
-        "category": "Programação",
+        "category": "Design",
         "duration": 50,
         "image": "assets/random.png",
         "lessons": [
