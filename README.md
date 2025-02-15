@@ -45,7 +45,7 @@ Execute o seguinte comando `npm start`. Acesse `http://localhost:4200/` em seu n
 
 ## Executando testes unitários 
 
-Para executar os testes unitários, utilize o comando `npm test`. Isso acionará os testes via [Jest](https://jestjs.io/pt-BR/).
+Para executar os testes unitários, utilize o comando `npm run test`. Isso acionará os testes via [Jest](https://jestjs.io/pt-BR/).
 
 ![Desktop](public/test.png)
 
